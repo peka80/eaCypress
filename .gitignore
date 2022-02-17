@@ -1,0 +1,15 @@
+# Dependancy directories
+node_modules/
+
+# Cypress 
+cypress/videos
+cypress/screenshots
+cypress.env.json
+stage.cypress.env.json
+qa3.cypress.env.json
+qa4.cypress.env.json
+qa5.cypress.env.json
+cypress/.DS_Store
+
+# OS generated files
+.DS_Store
