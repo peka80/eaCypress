@@ -1,6 +1,7 @@
 /// <reference types="Cypress" />
 
 describe("Testing Telenor.rs home page slider", () => {
+  // Implicite Assertation
   it("Visit Telenor.rs website - Implicite", () => {
     cy.visit("https://www.telenor.rs/");
 
@@ -10,6 +11,7 @@ describe("Testing Telenor.rs home page slider", () => {
     );
   });
 
+  // Explicite Assertation
   it("Visit Telenor.rs website - Explicite", () => {
     cy.visit("https://www.telenor.rs/");
 
