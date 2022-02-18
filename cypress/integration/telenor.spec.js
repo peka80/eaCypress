@@ -4,7 +4,7 @@ describe("Testing Telenor.rs home page slider", () => {
   it("Visit Telenor.rs website - Implicite", () => {
     cy.visit("https://www.telenor.rs/");
 
-    cy.get("[aria-controls='navigation12']", { timeout: 10000 }).should(
+    cy.get("[aria-controls='navigation12']", { timeout: 15000 }).should(
       "have.class",
       "slick-active"
     );
@@ -13,7 +13,7 @@ describe("Testing Telenor.rs home page slider", () => {
   it("Visit Telenor.rs website - Explicite", () => {
     cy.visit("https://www.telenor.rs/");
 
-    cy.get("[aria-controls='navigation12']", { timeout: 20000 }).should(
+    cy.get("[aria-controls='navigation12']", { timeout: 15000 }).should(
       ($x) => {
         expect($x).to.have.class("slick-active");
       }
