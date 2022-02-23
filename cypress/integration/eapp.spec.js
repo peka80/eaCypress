@@ -58,7 +58,7 @@ describe("Testing of EA app", () => {
       .click()
   })
 
-  it("`Login application alias for UI operations", () => {
+  it("Login application alias for UI operations", () => {
 
     cy.get("@userlog").then((userlog) => {
       cy.get("#UserName").type(userlog.userName)
@@ -85,7 +85,7 @@ describe("Testing of EA app", () => {
     })
   })
 
-  it("`Login application alias for UI operations", () => {
+  it("Login application alias for UI operations", () => {
 
     cy.get("@userlog").then((userlog) => {
       cy.get("#UserName").type(userlog.userName)
@@ -118,7 +118,7 @@ describe("Testing of EA app", () => {
       .and("eq", "Ramesh")
   })
 
-  it("`Login application alias for UI operations", () => {
+  it("Login application alias for UI operations", () => {
 
     cy.get("@userlog").then((userlog) => {
       cy.get("#UserName").type(userlog.userName)
