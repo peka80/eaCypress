@@ -1,31 +1,16 @@
 /// <reference types="Cypress" />
 
 describe("Testing of EA app", () => {
-
   beforeEach("Visit EA Application website", () => {
     cy.visit("http://eaapp.somee.com/")
     cy.fixture("eauser").as("userlog")
 
-    // Shortend version for alias
-    cy.get("#loginLink").invoke("text").as("linkText")
-
-    cy.contains("Login").click()
-
-    cy.get("@linkText").then(($x) => {
-      expect($x).is.eql("Login")
-    })
-
-    cy.url().should("include", "/Account/Login")
-  })
-  
-  it("Login application alias long version", () => {
-
     cy.get("@userlog").then((userlog) => {
-      cy.get("#UserName").type(userlog.userName)
-      cy.get("#Password").type(userlog.passWord)
+      cy.login(userlog.userName, userlog.passWord)
     })
-  
-    cy.get(".btn").click()
+  })
+
+  it("Login application alias long version", () => {
     cy.get("a[title='Manage']").should("exist").and("be.visible")
 
     cy.contains("Employee List").click()
@@ -39,16 +24,9 @@ describe("Testing of EA app", () => {
   })
 
   it("Login application alias short version", () => {
-
-    cy.get("@userlog").then((userlog) => {
-      cy.get("#UserName").type(userlog.userName)
-      cy.get("#Password").type(userlog.passWord)
-    })
-
-    cy.get(".btn").click()
+    cy.get("a[title='Manage']").should("exist").and("be.visible")
 
     cy.contains("Employee List").click()
-    cy.get("a[title='Manage']").should("exist").and("be.visible")
 
     cy.get(".table")
       .find("tr")
@@ -59,13 +37,6 @@ describe("Testing of EA app", () => {
   })
 
   it("Login application alias for UI operations", () => {
-
-    cy.get("@userlog").then((userlog) => {
-      cy.get("#UserName").type(userlog.userName)
-      cy.get("#Password").type(userlog.passWord)
-    })
-
-    cy.get(".btn").click()
     cy.get("a[title='Manage']").should("exist").and("be.visible")
 
     cy.contains("Employee List").click()
@@ -86,13 +57,6 @@ describe("Testing of EA app", () => {
   })
 
   it("Login application alias for UI operations", () => {
-
-    cy.get("@userlog").then((userlog) => {
-      cy.get("#UserName").type(userlog.userName)
-      cy.get("#Password").type(userlog.passWord)
-    })
-
-    cy.get(".btn").click()
     cy.get("a[title='Manage']").should("exist").and("be.visible")
 
     // Click on Employee List
@@ -119,13 +83,6 @@ describe("Testing of EA app", () => {
   })
 
   it("Login application alias for UI operations", () => {
-
-    cy.get("@userlog").then((userlog) => {
-      cy.get("#UserName").type(userlog.userName)
-      cy.get("#Password").type(userlog.passWord)
-    })
-
-    cy.get(".btn").click()
     cy.get("a[title='Manage']").should("exist").and("be.visible")
 
     // Click on Employee List
@@ -154,5 +111,5 @@ describe("Testing of EA app", () => {
 
     cy.get("#registerLink").should("exist").and("be.visible")
     cy.get("#loginLink").should("exist").and("be.visible")
-  });
+  })
 })
