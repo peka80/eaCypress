@@ -2,7 +2,7 @@
 
 describe("Testing of EA app", () => {
   beforeEach("Visit EA Application website", () => {
-    cy.visit("http://eaapp.somee.com/")
+    cy.visit("/")
     cy.fixture("eauser").as("userlog")
 
     cy.get("@userlog").then((userlog) => {
