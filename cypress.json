@@ -3,7 +3,8 @@
   "baseUrl": "http://eaapp.somee.com/",
   "testFiles": [
     "/Users/peka/myGitHome/executeAutomation/cypress/integration/eapp.spec.js",
-    "**/ea.spec.js"
+    "**/ea.spec.js",
+    "**/*.feature"
   ],
   "env": {
     "username": "admin"
