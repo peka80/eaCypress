@@ -18,6 +18,15 @@ Given(`I login as user with {string} and {string}`, (userName, password) => {
   cy.get(".btn").click()
 })
 
+Given(`I login as following`, datatable => {
+  datatable.hashes().forEach(row => {
+    cy.get("#UserName").type(row.userName)
+    cy.get("#Password").type(row.Password, {log:false})
+  });
+
+  cy.get(".btn").click()
+})
+
 And(`Logoff from site`, () => {
   cy.get("a").contains("Log off").click()
 
