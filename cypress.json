@@ -4,7 +4,7 @@
   "testFiles": [
     "/Users/peka/myGitHome/executeAutomation/cypress/integration/eapp.spec.js",
     "**/ea.spec.js",
-    "**/telenor.spec.js",
+    "**/yettel.spec.js",
     "**/*.feature"
   ],
   "env": {
