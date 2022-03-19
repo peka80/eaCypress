@@ -1,8 +1,8 @@
 /// <reference types="Cypress" />
 
-describe("Testing Telenor.rs home page slider", () => {
-  beforeEach("Visit Telenor Homepage", () => {
-    cy.visit("https://www.telenor.rs/");
+describe("Testing Yettel.rs home page slider", () => {
+  beforeEach("Visit Yettel Homepage", () => {
+    cy.visit("https://www.yettel.rs/");
   });
 
   // Implicite Assertation
